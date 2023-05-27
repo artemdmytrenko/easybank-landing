@@ -24,5 +24,4 @@ dist-ssr
 *.sw?
 .eslintrc.cjs
 design/*
-vite.config.js
 style-guide.md
