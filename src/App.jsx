@@ -1,4 +1,5 @@
-import { useState, createPortal } from "react";
+import { useState } from "react";
+import { createPortal } from "react-dom";
 import logo from "./assets/logo.svg";
 import logolight from "./assets/logo-light.svg";
 import iconOnline from "./assets/icon-online.svg";
