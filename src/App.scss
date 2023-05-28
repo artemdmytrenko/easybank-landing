@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
 
-$primary-text-color: hsl(233, 26%, 24%);
-$secondary-text-color: hsl(233, 8%, 62%);
+$primary-text-color: hsl(234, 25%, 24%);
+$secondary-text-color: hsl(231, 6%, 45%);
 $gradient-from: hsl(136, 65%, 51%);
 $gradient-to: hsl(192, 70%, 51%);
-$bg-color-cool: hsl(220, 16%, 96%);
+$bg-color-cool: hsl(220, 14%, 96%);
 $bg-color-warm: hsl(0, 0%, 98%);
 $white: hsl(0, 0%, 100%);
 $gradient: linear-gradient(150deg, $gradient-from, $gradient-to);
@@ -300,7 +300,7 @@ footer {
     padding-block: 1rem 2.5rem;
 
     small {
-      color: $secondary-text-color;
+      color: hsl(233, 4%, 62%);
       font-size: 0.9rem;
     }
   }
