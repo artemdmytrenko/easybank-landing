@@ -63,7 +63,12 @@ function App() {
         )}
         {showModal &&
           createPortal(
-            <div className="modal">
+            <div
+              onPointerDown={(e) => {
+                e.stopPropagation();
+              }}
+              className="modal"
+            >
               <a href="#">Home</a>
               <a href="#">About</a>
               <a href="#">Contact</a>
