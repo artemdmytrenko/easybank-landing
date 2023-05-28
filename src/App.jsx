@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState, createPortal } from "react";
 import logo from "./assets/logo.svg";
 import logolight from "./assets/logo-light.svg";
 import iconOnline from "./assets/icon-online.svg";
@@ -10,24 +10,27 @@ import youtube from "./assets/icon-youtube.svg";
 import twitter from "./assets/icon-twitter.svg";
 import pinterest from "./assets/icon-pinterest.svg";
 import instagram from "./assets/icon-instagram.svg";
-import "./App.scss";
 import hamburger from "./assets/icon-hamburger.svg";
 import close from "./assets/icon-close.svg";
 import useMediaQuery from "./hooks/useMediaQuery";
-import { createPortal } from "react-dom";
 import img1 from "./assets/image-currency.jpg";
 import img2 from "./assets/image-restaurant.jpg";
 import img3 from "./assets/image-plane.jpg";
 import img4 from "./assets/image-confetti.jpg";
+import "./App.scss";
 
 function App() {
   const matches = useMediaQuery("(min-width: 800px)");
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <>
+    <div
+      onPointerDown={() => {
+        showModal && setShowModal(!showModal);
+      }}
+    >
       <nav>
-        <img src={logo} alt="easybank Logo" />
+        <img src={logo} alt="Easybank Logo" />
         {matches ? (
           <>
             <div>
@@ -42,10 +45,15 @@ function App() {
         ) : (
           <>
             {showModal ? (
-              <img src={close} onClick={() => setShowModal(!showModal)} />
+              <img
+                src={close}
+                alt="close modal menu button"
+                onClick={() => setShowModal(!showModal)}
+              />
             ) : (
               <img
                 src={hamburger}
+                alt="open modal menu button"
                 className="nav"
                 onClick={() => setShowModal(!showModal)}
               />
@@ -54,7 +62,7 @@ function App() {
         )}
         {showModal &&
           createPortal(
-            <div onBlur={() => setShowModal(false)} className="modal">
+            <div className="modal">
               <a href="#">Home</a>
               <a href="#">About</a>
               <a href="#">Contact</a>
@@ -76,7 +84,7 @@ function App() {
         </div>
       </header>
       <main>
-        <section className="why">
+        <section className="values-section">
           <div>
             <h2>Why choose Easybank?</h2>
             <p>
@@ -86,7 +94,12 @@ function App() {
           </div>
           <ul>
             <li>
-              <img src={iconOnline} width={70} loading="lazy" />
+              <img
+                src={iconOnline}
+                alt="online banking"
+                width={70}
+                loading="lazy"
+              />
               <strong>
                 <p>Online Banking</p>
               </strong>
@@ -96,7 +109,12 @@ function App() {
               </p>
             </li>
             <li>
-              <img src={iconBudgeting} width={70} loading="lazy" />
+              <img
+                src={iconBudgeting}
+                alt="simple budgeting"
+                width={70}
+                loading="lazy"
+              />
               <strong>
                 <p>Simple Budgeting</p>
               </strong>
@@ -106,7 +124,12 @@ function App() {
               </p>
             </li>
             <li>
-              <img src={iconOnboarding} width={70} loading="lazy" />
+              <img
+                src={iconOnboarding}
+                alt="fast onboarding"
+                width={70}
+                loading="lazy"
+              />
               <strong>
                 <p>Fast Onboarding</p>
               </strong>
@@ -116,7 +139,7 @@ function App() {
               </p>
             </li>
             <li>
-              <img src={iconAPI} width={70} loading="lazy" />
+              <img src={iconAPI} alt="open API" width={70} loading="lazy" />
               <strong>
                 <p>Open API</p>
               </strong>
@@ -131,7 +154,12 @@ function App() {
           <h3>Latest Articles</h3>
           <div>
             <article>
-              <img src={img1} height={200} loading="lazy" />
+              <img
+                src={img1}
+                alt="Receive money in any currency with no fees"
+                height={200}
+                loading="lazy"
+              />
               <div>
                 <small>By Claire Robinson</small>
                 <strong>
@@ -145,7 +173,12 @@ function App() {
               </div>
             </article>
             <article>
-              <img src={img2} height={200} loading="lazy" />
+              <img
+                src={img2}
+                alt="Treat yourself without worrying about money"
+                height={200}
+                loading="lazy"
+              />
               <div>
                 <small>By Wilson Hutton</small>
                 <strong>
@@ -159,7 +192,12 @@ function App() {
               </div>
             </article>
             <article>
-              <img src={img3} height={200} loading="lazy" />
+              <img
+                src={img3}
+                alt="Take your Easybank card wherever you go"
+                height={200}
+                loading="lazy"
+              />
               <div>
                 <small>By Wilson Hutton</small>
                 <strong>
@@ -173,7 +211,12 @@ function App() {
               </div>
             </article>
             <article>
-              <img src={img4} height={200} loading="lazy" />
+              <img
+                src={img4}
+                alt="Our invite-only Beta accounts are now live!"
+                height={200}
+                loading="lazy"
+              />
               <div>
                 <small>By Claire Robinson</small>
                 <strong>
@@ -195,19 +238,19 @@ function App() {
             <img src={logolight} alt="Easybank logo" />
             <div>
               <a href="#">
-                <img src={facebook} alt="Easybank @ Facebook" />
+                <img src={facebook} alt="Easybank on Facebook" />
               </a>
               <a href="#">
-                <img src={youtube} alt="Easybank @ Youtube" />
+                <img src={youtube} alt="Easybank on Youtube" />
               </a>
               <a href="#">
-                <img src={twitter} alt="Easybank @ Twitter" />
+                <img src={twitter} alt="Easybank on Twitter" />
               </a>
               <a href="#">
-                <img src={pinterest} alt="Easybank @ Pinterest" />
+                <img src={pinterest} alt="Easybank on Pinterest" />
               </a>
               <a href="#">
-                <img src={instagram} alt="Easybank @ Instagram" />
+                <img src={instagram} alt="Easybank on Instagram" />
               </a>
             </div>
           </div>
@@ -227,7 +270,7 @@ function App() {
           <small>&copy; Easybank. All Rights Reserved</small>
         </div>
       </footer>
-    </>
+    </div>
   );
 }
 

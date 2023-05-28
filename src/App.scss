@@ -99,7 +99,7 @@ header {
     left: 0;
     block-size: 50vh;
     inline-size: 100%;
-    background: url(../image-mockups.png) no-repeat 50% calc(0% - 21vh);
+    background: url(../image-mockups.webp) no-repeat 50% calc(0% - 21vh);
     background-size: 50vh;
   }
 
@@ -131,7 +131,7 @@ header {
   }
 }
 
-.why {
+.values-section {
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -307,7 +307,7 @@ footer {
 }
 
 @media screen and (min-width: 676px) {
-  .why {
+  .values-section {
     ul {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -406,12 +406,12 @@ footer {
       position: absolute;
       block-size: 100vh;
       inline-size: 100%;
-      background: url(../image-mockups.png) no-repeat 55.5vw -13vh;
+      background: url(../image-mockups.webp) no-repeat 55.5vw -13vh;
       background-size: 90.5vh;
     }
   }
 
-  .why {
+  .values-section {
     div {
       margin-block: -0.5rem 3.5rem;
       align-self: flex-start;
@@ -477,7 +477,7 @@ footer {
   }
 
   header div,
-  .why div,
+  .values-section div,
   .articles h3 {
     margin-inline-start: calc(calc(100% - 1224px) / 2);
   }
