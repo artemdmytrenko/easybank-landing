@@ -115,7 +115,7 @@ header {
     gap: 1.5rem;
     block-size: 50vh;
     margin-inline: $padding;
-    margin-block-end: 3.5rem;
+    margin-block-end: 3rem;
 
     h1 {
       @include text-styles(2rem, 400, $primary-text-color);
